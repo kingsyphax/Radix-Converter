@@ -10,12 +10,14 @@ def bin_to_dec(binary):
 def dec_to_bin(decimal):
     result = ""
     power = int(math.log2(float(decimal)))
+    decimal = int(decimal)
     while power >= 0:
-        if 2 ** power < int(decimal):
+        if 2 ** power < decimal:
             decimal -= 2 ** power
             result += "1"
         else:
             result += "0"
+        power -= 1
     return "0b" + result[::-1]
 
 hex_to_bin_map = {"0": "0000", "1": "0001", "2": "0010", "3": "0011", "4": "0100", "5": "0101", "6": "0110", "7": "0111", "8": "1000", "9": "1001", "a": "1010", "b": "1011", "c": "1100", "d": "1101", "e": "1110", "f": "1111"}
