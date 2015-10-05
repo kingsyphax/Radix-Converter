@@ -32,6 +32,7 @@ def hex_to_bin(hexadecimal):
 
 def bin_to_hex(binary):
     binary = binary[2:]
+    binary = "0" * (-len(binary) % 4) + binary
     result = ""
     for i in range(0, len(binary), 4):
         result += bin_to_hex_map[binary[i:i+4]]
